@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-07T02:09:54.149Z",
+    "end": "2022-12-07T02:09:59.269Z",
+    "duration": 5120,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8d0a4518-9e00-40e0-bd79-39380c2377a8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\negativeTest.cy.js",
+      "file": "cypress\\e2e\\test\\negativeTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fcf7e5ef-0839-4fa7-92a1-e96a4b3cfb78",
+          "title": "Negative Testn",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login with a valid user, add an item to cart and checkout successfully",
+              "fullTitle": "Negative Testn should login with a valid user, add an item to cart and checkout successfully",
+              "timedOut": null,
+              "duration": 4915,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.visit('/')\n_login.default.login('standard_user', 'secret_sauce');\ncy.get('.inventory_item_name').should('be.visible');\n_cart.default.addToCart('Sauce Labs Backpack');\n_cart.default.navigateToCart();\ncy.get(_cart.default.cartNotification).should('have.text', 1);\ncy.get(_cart.default.cartQuantity).should('have.text', 1);\ncy.get(_cart.default.removeSauceLabBackPackBtn).should('be.visible');\ncy.get(_cart.default.cartItemsName).should('have.text', 'Sauce Labs Backpack');\n_cart.default.checkoutProcessNegative(faker.name.firstName(), faker.name.lastName());\ncy.get(_cart.default.errorMessagePostalCode).should('exist');\ncy.get(_cart.default.errorMessagePostalCode).should('have.text', 'Error: Postal Code is required'); //Cart.checkoutSuccess()",
+              "err": {},
+              "uuid": "3fb87a13-878d-49a5-bd56-716865d1ce5c",
+              "parentUUID": "fcf7e5ef-0839-4fa7-92a1-e96a4b3cfb78",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3fb87a13-878d-49a5-bd56-716865d1ce5c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4915,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

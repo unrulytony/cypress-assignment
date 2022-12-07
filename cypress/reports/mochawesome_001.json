@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-07T02:09:27.358Z",
+    "end": "2022-12-07T02:09:39.030Z",
+    "duration": 11672,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f89854d5-c04b-48fa-a522-6ebb37710879",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test\\datadriven.cy.js",
+      "file": "cypress\\e2e\\test\\datadriven.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d336a616-347e-49de-8464-a8e249542e54",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login with a valid user",
+              "fullTitle": "Login should login with a valid user",
+              "timedOut": null,
+              "duration": 1787,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//   cy.visit('/')\n_login.default.login(_users.default.valid.username, _users.default.valid.password);\ncy.get('.inventory_item_name').should('be.visible');",
+              "err": {},
+              "uuid": "3aba1c14-2dd6-4958-9d27-0fd86aab7470",
+              "parentUUID": "d336a616-347e-49de-8464-a8e249542e54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should not login with a locked out user",
+              "fullTitle": "Login should not login with a locked out user",
+              "timedOut": null,
+              "duration": 1487,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit('/')\n_login.default.login(_users.default.lockedOutUser.username, _users.default.lockedOutUser.password); //cy.get('.inventory_item_name').should('be.visible')\n\ncy.get(`h3[data-test='error']`).should('contain', _users.default.lockedOutUser.errorMsg);",
+              "err": {},
+              "uuid": "dfbceb12-ad1c-4a9b-959e-8e789ddfb9af",
+              "parentUUID": "d336a616-347e-49de-8464-a8e249542e54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should login with a peformance glitch user",
+              "fullTitle": "Login should login with a peformance glitch user",
+              "timedOut": null,
+              "duration": 6759,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit('/')\n_login.default.login(_users.default.performanceGlitchUser.username, _users.default.performanceGlitchUser.password);\ncy.get('.inventory_item_name').should('be.visible');",
+              "err": {},
+              "uuid": "610db3bb-1b25-4cd9-8815-703a9c30848a",
+              "parentUUID": "d336a616-347e-49de-8464-a8e249542e54",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should login with a problem user",
+              "fullTitle": "Login should login with a problem user",
+              "timedOut": null,
+              "duration": 1414,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit('/')\n_login.default.login(_users.default.problemUser.username, _users.default.problemUser.password);\ncy.get('.inventory_item_name').should('be.visible');",
+              "err": {},
+              "uuid": "809968ce-9de2-4622-bb9b-0bb56db001ea",
+              "parentUUID": "d336a616-347e-49de-8464-a8e249542e54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3aba1c14-2dd6-4958-9d27-0fd86aab7470",
+            "dfbceb12-ad1c-4a9b-959e-8e789ddfb9af",
+            "610db3bb-1b25-4cd9-8815-703a9c30848a",
+            "809968ce-9de2-4622-bb9b-0bb56db001ea"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11447,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
